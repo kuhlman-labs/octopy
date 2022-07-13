@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://kuhlman-labs.github.io/octopy/reference/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Reference - OctoPy</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Reference";
+        var mkdocs_page_input_path = "reference.md";
+        var mkdocs_page_url = "/octopy/reference/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> OctoPy
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Reference</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_query.GraphRequest">GraphRequest</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphRequest.__init__">__init__()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphRequest._load_query">_load_query()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphRequest._execute">_execute()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_query.GraphQueryProvider">GraphQueryProvider</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryProvider.get_enterprise_orgs">get_enterprise_orgs()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryProvider.get_org_repos">get_org_repos()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryProvider.get_repo_collaborators">get_repo_collaborators()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_query.GraphMutationProducer">GraphMutationProducer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphMutationProducer.add_enterprise_org">add_enterprise_org()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphMutationProducer.add_repository">add_repository()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_query.GraphQueryResponseTransmuter">GraphQueryResponseTransmuter</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryResponseTransmuter.get_org_list">get_org_list()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryResponseTransmuter.get_repo_list">get_repo_list()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryResponseTransmuter.get_collaborators_permission_list">get_collaborators_permission_list()</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">OctoPy</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Reference</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="documentation-for-the-graph_query-module">Documentation for the <code>graph_query</code> module.</h1>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="octopy.graph_query.GraphRequest" class="doc doc-heading">
+        <code>octopy.graph_query.GraphRequest</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents first">
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphRequest.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Initialize the GraphQL client.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphRequest._load_query" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">_load_query</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Load a query from a file.</p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Relative path to the query file.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphRequest._execute" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">_execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute a query.</p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>query</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>GraphQL query.</p></td>
+        </tr>
+        <tr>
+          <td><code>params</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>Query parameters.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="octopy.graph_query.GraphQueryProvider" class="doc doc-heading">
+        <code>octopy.graph_query.GraphQueryProvider</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents first">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="octopy.graph_query.GraphRequest" href="#octopy.graph_query.GraphRequest">GraphRequest</a></code></p>
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphQueryProvider.get_enterprise_orgs" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_enterprise_orgs</span><span class="p">(</span><span class="n">enterprise</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This module returns a generator that will yield a dictionary of all organizations in an Enterprise.</p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>enterprise</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the Enterprise.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphQueryProvider.get_org_repos" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_org_repos</span><span class="p">(</span><span class="n">org</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This module returns a generator that will yield a dictionary of all repositories in an organization.</p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>org</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the Organization.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphQueryProvider.get_repo_collaborators" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_repo_collaborators</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">repo</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This module returns a generator that will yield a dictionary of all collaborators in a repository.</p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>org</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the Organization.</p></td>
+        </tr>
+        <tr>
+          <td><code>repo</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the Repository.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="octopy.graph_query.GraphMutationProducer" class="doc doc-heading">
+        <code>octopy.graph_query.GraphMutationProducer</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents first">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="octopy.graph_query.GraphRequest" href="#octopy.graph_query.GraphRequest">GraphRequest</a></code></p>
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphMutationProducer.add_enterprise_org" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_enterprise_org</span><span class="p">(</span><span class="n">organization</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This module adds an Enterprise organization to the GitHub Enterprise.</p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>organization</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the Organization.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphMutationProducer.add_repository" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_repository</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This module adds a repository to the GitHub Enterprise.</p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>repository</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the Repository.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="octopy.graph_query.GraphQueryResponseTransmuter" class="doc doc-heading">
+        <code>octopy.graph_query.GraphQueryResponseTransmuter</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents first">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="octopy.graph_query.GraphQueryProvider" href="#octopy.graph_query.GraphQueryProvider">GraphQueryProvider</a></code></p>
+
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphQueryResponseTransmuter.get_org_list" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_org_list</span><span class="p">(</span><span class="n">enterprise</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This module returns a list of all organizations in an Enterprise.</p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>enterprise</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the Enterprise.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphQueryResponseTransmuter.get_repo_list" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_repo_list</span><span class="p">(</span><span class="n">org</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This module returns a list of all repositories in an organization.        </p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>org</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the Organization.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="octopy.graph_query.GraphQueryResponseTransmuter.get_collaborators_permission_list" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_collaborators_permission_list</span><span class="p">(</span><span class="n">org</span><span class="p">,</span> <span class="n">repo</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This module returns a list of tuples of all collaborators in a repository with their permission level.</p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>org</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the Organization.</p></td>
+        </tr>
+        <tr>
+          <td><code>repo</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>The name of the Repository.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
