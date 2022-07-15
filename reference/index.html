@@ -48,41 +48,41 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Reference</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_query.GraphRequest">GraphRequest</a>
+    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_request.GraphRequest">GraphRequest</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphRequest.__init__">__init__()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_request.GraphRequest.__init__">__init__()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphRequest._load_query">_load_query()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_request.GraphRequest._load_query">_load_query()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphRequest._execute">_execute()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_request.GraphRequest._execute">_execute()</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_query.GraphQueryProvider">GraphQueryProvider</a>
+    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_query.GraphQuery">GraphQuery</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryProvider.get_enterprise_orgs">get_enterprise_orgs()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQuery.get_enterprise_orgs">get_enterprise_orgs()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryProvider.get_org_repos">get_org_repos()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQuery.get_org_repos">get_org_repos()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryProvider.get_repo_collaborators">get_repo_collaborators()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQuery.get_repo_collaborators">get_repo_collaborators()</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_query.GraphMutationProducer">GraphMutationProducer</a>
+    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_mutation.GraphMutation">GraphMutation</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphMutationProducer.add_enterprise_org">add_enterprise_org()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_mutation.GraphMutation.add_enterprise_org">add_enterprise_org()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphMutationProducer.add_repository">add_repository()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_mutation.GraphMutation.add_repository">add_repository()</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_query.GraphQueryResponseTransmuter">GraphQueryResponseTransmuter</a>
+    <li class="toctree-l2"><a class="reference internal" href="#octopy.graph_query_converter.GraphQueryConverter">GraphQueryConverter</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryResponseTransmuter.get_org_list">get_org_list()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query_converter.GraphQueryConverter.get_org_list">get_org_list()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryResponseTransmuter.get_repo_list">get_repo_list()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query_converter.GraphQueryConverter.get_repo_list">get_repo_list()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query.GraphQueryResponseTransmuter.get_collaborators_permission_list">get_collaborators_permission_list()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#octopy.graph_query_converter.GraphQueryConverter.get_collaborators_permission_list">get_collaborators_permission_list()</a>
     </li>
         </ul>
     </li>
@@ -119,8 +119,8 @@
 
 
 
-<h2 id="octopy.graph_query.GraphRequest" class="doc doc-heading">
-        <code>octopy.graph_query.GraphRequest</code>
+<h2 id="octopy.graph_request.GraphRequest" class="doc doc-heading">
+        <code>octopy.graph_request.GraphRequest</code>
 
 
 </h2>
@@ -128,6 +128,8 @@
 
   <div class="doc doc-contents first">
 
+  
+      <p>This following methods are used to form requests to the GitHub GraphQL API.</p>
 
 
 
@@ -147,8 +149,8 @@
 
 
 
-<h3 id="octopy.graph_query.GraphRequest.__init__" class="doc doc-heading">
-<code class="highlight language-python">__init__()</code>
+<h3 id="octopy.graph_request.GraphRequest.__init__" class="doc doc-heading">
+<code class="highlight language-python">__init__(graph_api_url=None, api_token=None)</code>
 
 </h3>
 
@@ -165,7 +167,7 @@
 
 
 
-<h3 id="octopy.graph_query.GraphRequest._load_query" class="doc doc-heading">
+<h3 id="octopy.graph_request.GraphRequest._load_query" class="doc doc-heading">
 <code class="highlight language-python">_load_query(path)</code>
 
 </h3>
@@ -203,7 +205,7 @@
 
 
 
-<h3 id="octopy.graph_query.GraphRequest._execute" class="doc doc-heading">
+<h3 id="octopy.graph_request.GraphRequest._execute" class="doc doc-heading">
 <code class="highlight language-python">_execute(query, params)</code>
 
 </h3>
@@ -256,8 +258,8 @@
 
 
 
-<h2 id="octopy.graph_query.GraphQueryProvider" class="doc doc-heading">
-        <code>octopy.graph_query.GraphQueryProvider</code>
+<h2 id="octopy.graph_query.GraphQuery" class="doc doc-heading">
+        <code>octopy.graph_query.GraphQuery</code>
 
 
 </h2>
@@ -265,8 +267,10 @@
 
   <div class="doc doc-contents first">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="octopy.graph_query.GraphRequest" href="#octopy.graph_query.GraphRequest">GraphRequest</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="octopy.graph_request.GraphRequest" href="#octopy.graph_request.GraphRequest">GraphRequest</a></code></p>
 
+  
+      <p>This class is used to get the data from the GraphQL API.</p>
 
 
 
@@ -286,7 +290,7 @@
 
 
 
-<h3 id="octopy.graph_query.GraphQueryProvider.get_enterprise_orgs" class="doc doc-heading">
+<h3 id="octopy.graph_query.GraphQuery.get_enterprise_orgs" class="doc doc-heading">
 <code class="highlight language-python">get_enterprise_orgs(enterprise)</code>
 
 </h3>
@@ -294,7 +298,8 @@
 
   <div class="doc doc-contents ">
   
-      <p>This module returns a generator that will yield a dictionary of all organizations in an Enterprise.</p>
+      <p>This module returns a generator that will yield a dictionary
+ of all organizations in an Enterprise.</p>
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -324,7 +329,7 @@
 
 
 
-<h3 id="octopy.graph_query.GraphQueryProvider.get_org_repos" class="doc doc-heading">
+<h3 id="octopy.graph_query.GraphQuery.get_org_repos" class="doc doc-heading">
 <code class="highlight language-python">get_org_repos(org)</code>
 
 </h3>
@@ -332,7 +337,8 @@
 
   <div class="doc doc-contents ">
   
-      <p>This module returns a generator that will yield a dictionary of all repositories in an organization.</p>
+      <p>This module returns a generator that will yield a dictionary
+of all repositories in an organization.</p>
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -362,7 +368,7 @@
 
 
 
-<h3 id="octopy.graph_query.GraphQueryProvider.get_repo_collaborators" class="doc doc-heading">
+<h3 id="octopy.graph_query.GraphQuery.get_repo_collaborators" class="doc doc-heading">
 <code class="highlight language-python">get_repo_collaborators(org, repo)</code>
 
 </h3>
@@ -370,7 +376,8 @@
 
   <div class="doc doc-contents ">
   
-      <p>This module returns a generator that will yield a dictionary of all collaborators in a repository.</p>
+      <p>This module returns a generator that will yield a dictionary
+ of all collaborators in a repository.</p>
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -415,8 +422,8 @@
 
 
 
-<h2 id="octopy.graph_query.GraphMutationProducer" class="doc doc-heading">
-        <code>octopy.graph_query.GraphMutationProducer</code>
+<h2 id="octopy.graph_mutation.GraphMutation" class="doc doc-heading">
+        <code>octopy.graph_mutation.GraphMutation</code>
 
 
 </h2>
@@ -424,8 +431,10 @@
 
   <div class="doc doc-contents first">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="octopy.graph_query.GraphRequest" href="#octopy.graph_query.GraphRequest">GraphRequest</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="octopy.graph_request.GraphRequest" href="#octopy.graph_request.GraphRequest">GraphRequest</a></code></p>
 
+  
+      <p>This class is used to make mutations through the GitHub GraphQL API.</p>
 
 
 
@@ -445,7 +454,7 @@
 
 
 
-<h3 id="octopy.graph_query.GraphMutationProducer.add_enterprise_org" class="doc doc-heading">
+<h3 id="octopy.graph_mutation.GraphMutation.add_enterprise_org" class="doc doc-heading">
 <code class="highlight language-python">add_enterprise_org(organization)</code>
 
 </h3>
@@ -483,7 +492,7 @@
 
 
 
-<h3 id="octopy.graph_query.GraphMutationProducer.add_repository" class="doc doc-heading">
+<h3 id="octopy.graph_mutation.GraphMutation.add_repository" class="doc doc-heading">
 <code class="highlight language-python">add_repository(repository)</code>
 
 </h3>
@@ -529,8 +538,8 @@
 
 
 
-<h2 id="octopy.graph_query.GraphQueryResponseTransmuter" class="doc doc-heading">
-        <code>octopy.graph_query.GraphQueryResponseTransmuter</code>
+<h2 id="octopy.graph_query_converter.GraphQueryConverter" class="doc doc-heading">
+        <code>octopy.graph_query_converter.GraphQueryConverter</code>
 
 
 </h2>
@@ -538,8 +547,10 @@
 
   <div class="doc doc-contents first">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="octopy.graph_query.GraphQueryProvider" href="#octopy.graph_query.GraphQueryProvider">GraphQueryProvider</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="octopy.graph_query.GraphQuery" href="#octopy.graph_query.GraphQuery">GraphQuery</a></code></p>
 
+  
+      <p>This class is used to transform the data from the GraphQL API.</p>
 
 
 
@@ -559,7 +570,7 @@
 
 
 
-<h3 id="octopy.graph_query.GraphQueryResponseTransmuter.get_org_list" class="doc doc-heading">
+<h3 id="octopy.graph_query_converter.GraphQueryConverter.get_org_list" class="doc doc-heading">
 <code class="highlight language-python">get_org_list(enterprise)</code>
 
 </h3>
@@ -597,7 +608,7 @@
 
 
 
-<h3 id="octopy.graph_query.GraphQueryResponseTransmuter.get_repo_list" class="doc doc-heading">
+<h3 id="octopy.graph_query_converter.GraphQueryConverter.get_repo_list" class="doc doc-heading">
 <code class="highlight language-python">get_repo_list(org)</code>
 
 </h3>
@@ -605,7 +616,7 @@
 
   <div class="doc doc-contents ">
   
-      <p>This module returns a list of all repositories in an organization.        </p>
+      <p>This module returns a list of all repositories in an organization.</p>
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -635,7 +646,7 @@
 
 
 
-<h3 id="octopy.graph_query.GraphQueryResponseTransmuter.get_collaborators_permission_list" class="doc doc-heading">
+<h3 id="octopy.graph_query_converter.GraphQueryConverter.get_collaborators_permission_list" class="doc doc-heading">
 <code class="highlight language-python">get_collaborators_permission_list(org, repo)</code>
 
 </h3>
@@ -643,7 +654,8 @@
 
   <div class="doc doc-contents ">
   
-      <p>This module returns a list of tuples of all collaborators in a repository with their permission level.</p>
+      <p>This module returns a list of tuples of all collaborators
+in a repository with their permission level.</p>
 
   <p><strong>Attributes:</strong></p>
   <table>
